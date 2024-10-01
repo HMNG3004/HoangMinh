@@ -2,7 +2,7 @@
   "name": "hoangminhngblog",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://hmng3004.github.io/MyBlog/",
+  "homepage": "https://HMNG3004.github.io/HoangMinh/",
   "type": "module",
   "scripts": {
     "dev": "vite",
