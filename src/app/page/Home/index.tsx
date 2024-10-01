@@ -1,4 +1,4 @@
-import { Facebook, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Facebook, Github, Linkedin, Mail } from "lucide-react";
 import React from "react";
 
 const HomePage: React.FC = () => {
@@ -23,18 +23,13 @@ const HomePage: React.FC = () => {
       icon: <Linkedin />, // Placeholder for LinkedIn icon
     },
     {
-      name: "Twitter",
-      link: "https://twitter.com/yourprofile",
-      icon: <Twitter />, // Placeholder for Twitter icon
-    },
-    {
       name: "Facebook",
       link: "https://www.facebook.com/hoangminhng.dev/",
       icon: <Facebook />, // Placeholder for Facebook icon
     },
     {
       name: "Gmail",
-      link: "mailto:yourname@gmail.com",
+      link: "mailto:ngminh3004@gmail.com",
       icon: <Mail />, // Placeholder for Gmail icon
     },
   ];
