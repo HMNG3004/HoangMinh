@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       date: "October 1, 2024",
       description:
         "Chào bạn! Mình là Hoàng Minh, một sinh viên năm cuối ngành Kỹ thuật Phần mềm tại Đại học FPT - TPHCM. Mình yêu thích công nghệ và đang dấn thân vào con đường phát triển web và di động.",
-      link: "/blog/bai-viet-dau-tien",
+      link: "blog/bai-viet-dau-tien",
     },
   ];
   const socials = [
