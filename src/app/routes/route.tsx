@@ -1,4 +1,4 @@
-import { createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../page/MainLayout";
 import { lazy, Suspense } from "react";
 import HomePage from "../page/Home";
@@ -9,8 +9,8 @@ const Projects = lazy(() => import("../page/Projects"));
 const Resume = lazy(() => import("../page/Resume"));
 const Contact = lazy(() => import("../page/Contact"));
 const About = lazy(() => import("../page/About"));
-
-export const Route = createHashRouter([
+const Error = lazy(() => import("../page/Error"));
+export const Route = createBrowserRouter([
   {
     path: "/",
     children: [
@@ -77,5 +77,13 @@ export const Route = createHashRouter([
         ],
       },
     ],
+  },
+  {
+    path: "*",
+    element: (
+      <Suspense fallback={<></>}>
+        <Error />
+      </Suspense>
+    ),
   },
 ]);

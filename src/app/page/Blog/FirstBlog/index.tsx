@@ -42,10 +42,11 @@ const FirstBlog: React.FC = () => {
             Tại sao blog này ra đời?
           </div>
           <div className="my-4 text-2xl text-gray-700">
-            Blog này được tạo ra để mình ghi lại những hoạt động hàng ngày trong
-            cuộc sống, công việc và học tập. Tại đây, mình sẽ chia sẻ những trải
-            nghiệm, bài học và những điều thú vị mà mình gặp phải trong hành
-            trình trưởng thành.
+            Blog này được tạo ra để{" "}
+            <span className="line-through">mình khè mọi người</span> mình ghi
+            lại những hoạt động hàng ngày trong cuộc sống, công việc và học tập.
+            Tại đây, mình sẽ chia sẻ những trải nghiệm, bài học và những điều
+            thú vị mà mình gặp phải trong hành trình trưởng thành.
           </div>
         </div>
 
