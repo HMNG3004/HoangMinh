@@ -5,7 +5,7 @@ const HomePage: React.FC = () => {
   const posts = [
     {
       title: "Nhật ký làm nô lệ cho đồ án tốt nghiệp",
-      date: "October 5, 2024",
+      date: "October 4, 2024",
       link: "blog/nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
     },
     {
