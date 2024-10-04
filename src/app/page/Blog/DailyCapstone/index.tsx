@@ -7,7 +7,7 @@ const DailyCapstone: React.FC = () => {
             Nhật ký làm nô lệ cho đồ án tốt nghiệp
           </h1>
           <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-            October 4, 2024
+            October 5, 2024
           </p>
         </div>
 
