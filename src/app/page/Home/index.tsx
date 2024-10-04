@@ -4,10 +4,13 @@ import React from "react";
 const HomePage: React.FC = () => {
   const posts = [
     {
+      title: "Nhật ký làm nô lệ cho đồ án tốt nghiệp",
+      date: "October 5, 2024",
+      link: "blog/nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
+    },
+    {
       title: "Giới thiệu về mình",
       date: "October 1, 2024",
-      description:
-        "Chào bạn! Mình là Hoàng Minh, một sinh viên năm cuối ngành Kỹ thuật Phần mềm tại Đại học FPT - TPHCM. Mình yêu thích công nghệ và đang dấn thân vào con đường phát triển web và di động.",
       link: "blog/bai-viet-dau-tien",
     },
   ];
@@ -36,7 +39,9 @@ const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="text-left w-4/5">
-        <h1 className="text-5xl font-bold text-gray-800">Hi, I’m Hoang Minh</h1>
+        <h1 className="text-2xl md:text-5xl font-bold text-gray-800">
+          Hi, I’m Hoang Minh
+        </h1>
         <p className="text-xl text-gray-600 mt-4">A Software Engineer</p>
         <p className="text-lg text-gray-500 mt-2">Welcome to my blog</p>
 
@@ -70,7 +75,6 @@ const HomePage: React.FC = () => {
           >
             <h3 className="text-2xl font-bold text-gray-800">{post.title}</h3>
             <p className="text-gray-600 text-sm mt-2">{post.date}</p>
-            <p className="text-gray-700 mt-4">{post.description}</p>
             <a
               href={post.link}
               className="text-blue-600 font-semibold mt-6 block"

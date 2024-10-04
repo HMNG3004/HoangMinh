@@ -3,6 +3,7 @@ import MainLayout from "../page/MainLayout";
 import { lazy, Suspense } from "react";
 import HomePage from "../page/Home";
 import FirstBlog from "../page/Blog/FirstBlog";
+import DailyCapstone from "../page/Blog/DailyCapstone";
 
 const Blog = lazy(() => import("../page/Blog"));
 const Projects = lazy(() => import("../page/Projects"));
@@ -39,6 +40,14 @@ export const Route = createBrowserRouter([
             element: (
               <Suspense fallback={<></>}>
                 <FirstBlog />
+              </Suspense>
+            ),
+          },
+          {
+            path: "blog/nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
+            element: (
+              <Suspense fallback={<></>}>
+                <DailyCapstone />
               </Suspense>
             ),
           },

@@ -62,7 +62,7 @@ const HeaderBar: React.FC = () => {
               className="h-8"
               alt="Flowbite Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="self-center text-lg  md:text-2xl font-semibold whitespace-nowrap dark:text-white">
               HMNG3004's space
             </span>
           </a>

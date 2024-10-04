@@ -5,9 +5,16 @@ const Blog: React.FC = () => {
   const navigate = useNavigate();
   const blogs = [
     {
-      title: "Bài viết đầu tiên",
+      title: "Nhật ký làm nô lệ cho đồ án tốt nghiệp",
+      slug: "nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
+      time: "October 4, 2024",
+      tag: "Daily",
+    },
+    {
+      title: "Giới thiệu về mình",
       slug: "bai-viet-dau-tien",
       time: "October 1, 2024",
+      tag: "Introduce",
     },
   ];
 
@@ -30,15 +37,13 @@ const Blog: React.FC = () => {
           >
             <div className="flex justify-between items-center mb-5 text-gray-500">
               <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                Introduce
+                {blog.tag}
               </span>
               <span className="text-sm">{blog.time}</span>
             </div>
             {/* Card Content */}
             <div className="">
-              <h2 className="text-2xl font-bold text-gray-800">
-                {blog.title}
-              </h2>
+              <h2 className="text-2xl font-bold text-gray-800">{blog.title}</h2>
             </div>
           </div>
         ))}

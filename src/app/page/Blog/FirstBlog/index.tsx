@@ -10,7 +10,7 @@ const FirstBlog: React.FC = () => {
             Giới thiệu về mình
           </div>
           <div className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-            Ngày 1 tháng 10 năm 2024
+            October 1, 2024
           </div>
         </div>
 
