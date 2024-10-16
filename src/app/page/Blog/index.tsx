@@ -5,6 +5,12 @@ const Blog: React.FC = () => {
   const navigate = useNavigate();
   const blogs = [
     {
+      title: "Người giỏi sẽ trả giá bằng sự cô đơn",
+      slug: "nguoi-gioi-se-tra-gia-bang-su-co-don",
+      time: "October 16, 2024",
+      tag: "Daily",
+    },
+    {
       title: "Nhật ký làm nô lệ cho đồ án tốt nghiệp",
       slug: "nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
       time: "October 4, 2024",

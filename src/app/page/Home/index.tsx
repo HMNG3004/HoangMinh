@@ -4,6 +4,11 @@ import React from "react";
 const HomePage: React.FC = () => {
   const posts = [
     {
+      title: "Người giỏi sẽ trả giá bằng sự cô đơn",
+      date: "October 16, 2024",
+      link: "blog/nguoi-gioi-se-tra-gia-bang-su-co-don",
+    },
+    {
       title: "Nhật ký làm nô lệ cho đồ án tốt nghiệp",
       date: "October 4, 2024",
       link: "blog/nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
