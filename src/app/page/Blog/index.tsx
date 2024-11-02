@@ -5,6 +5,12 @@ const Blog: React.FC = () => {
   const navigate = useNavigate();
   const blogs = [
     {
+      title: "Hôm nay mình hơi suy tư",
+      slug: "hom-nay-minh-hoi-suy-tu",
+      time: "November 2, 2024",
+      tag: "Daily",
+    },
+    {
       title: "Người giỏi sẽ trả giá bằng sự cô đơn",
       slug: "nguoi-gioi-se-tra-gia-bang-su-co-don",
       time: "October 16, 2024",

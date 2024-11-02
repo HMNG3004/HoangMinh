@@ -5,6 +5,7 @@ import HomePage from "../page/Home";
 import FirstBlog from "../page/Blog/FirstBlog";
 import DailyCapstone from "../page/Blog/DailyCapstone";
 import Oct16th from "../page/Blog/Oct16th";
+import Nov2nd from "../page/Blog/Nov2nd";
 
 const Blog = lazy(() => import("../page/Blog"));
 const Projects = lazy(() => import("../page/Projects"));
@@ -57,6 +58,14 @@ export const Route = createBrowserRouter([
             element: (
               <Suspense fallback={<></>}>
                 <Oct16th />
+              </Suspense>
+            ),
+          },
+          {
+            path: "blog/hom-nay-minh-hoi-suy-tu",
+            element: (
+              <Suspense fallback={<></>}>
+                <Nov2nd />
               </Suspense>
             ),
           },

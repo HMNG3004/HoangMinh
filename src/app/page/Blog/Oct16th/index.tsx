@@ -6,7 +6,7 @@ const Oct16th: React.FC = () => {
           {/* Tiêu đề bài viết */}
           <div className="mb-8">
             <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
-              Người giỏi và sự cô đơn
+              Người giỏi sẽ trả giá bằng sự cô đơn
             </h1>
             <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
               October 4, 2024

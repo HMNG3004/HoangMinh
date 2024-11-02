@@ -9,10 +9,10 @@ const HeaderBar: React.FC = () => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
-    { name: "Projects", path: "/projects" },
-    { name: "Resume", path: "/resume" },
-    { name: "Contact", path: "/contact" },
-    { name: "About", path: "/about" },
+    // { name: "Projects", path: "/projects" },
+    // { name: "Resume", path: "/resume" },
+    // { name: "Contact", path: "/contact" },
+    // { name: "About", path: "/about" },
   ];
 
   useEffect(() => {
