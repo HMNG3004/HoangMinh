@@ -9,7 +9,7 @@ const Nov2nd: React.FC = () => {
               Hôm nay mình hơi suy tư
             </h1>
             <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-              Novhọber 2, 2024
+              November 2, 2024
             </p>
           </div>
 

@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "antd": "^5.22.1",
     "flowbite-react": "^0.10.1",
     "gh-pages": "^6.1.1",
     "lucide-react": "^0.446.0",

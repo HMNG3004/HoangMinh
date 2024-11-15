@@ -6,6 +6,8 @@ import FirstBlog from "../page/Blog/FirstBlog";
 import DailyCapstone from "../page/Blog/DailyCapstone";
 import Oct16th from "../page/Blog/Oct16th";
 import Nov2nd from "../page/Blog/Nov2nd";
+import ReviewPartOne from "../page/Blog/SeriesReviewKnowledge/Part_one";
+import BackendInterviewQuestion from "../page/Blog/SeriesReviewKnowledge/PartTwo_Backend";
 
 const Blog = lazy(() => import("../page/Blog"));
 const Projects = lazy(() => import("../page/Projects"));
@@ -66,6 +68,22 @@ export const Route = createBrowserRouter([
             element: (
               <Suspense fallback={<></>}>
                 <Nov2nd />
+              </Suspense>
+            ),
+          },
+          {
+            path: "blog/series-on-tap-kien-thuc-p1",
+            element: (
+              <Suspense fallback={<></>}>
+                <ReviewPartOne />
+              </Suspense>
+            ),
+          },
+          {
+            path: "blog/backend-question-interview",
+            element: (
+              <Suspense fallback={<></>}>
+                <BackendInterviewQuestion />
               </Suspense>
             ),
           },
