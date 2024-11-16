@@ -21,10 +21,10 @@ const BackendInterviewQuestion = () => {
 
   return (
     <div className="w-full flex justify-center">
-      <div className="flex flex-col items-start text-left w-3/5">
+      <div className="flex flex-col items-start text-left w-4/5 md:w-3/5">
         <div>
           <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
-            Ôn tập backend
+            Backend Interview Question
           </h1>
           <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
             {formatDate(new Date(2024, 11, 15).toString())}

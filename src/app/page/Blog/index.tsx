@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils/formatDate";
 import { blogs } from "../../api/dataBlog";
 import { BlogsListViewModel } from "../../models/Blogs";
+import { blogTagStatuses } from "../../constants/status/blogTagStatuses";
+import Tag from "../../component/tag";
+import { ArrowRight } from "lucide-react";
 
 const Blog: React.FC = () => {
   const navigate = useNavigate();
@@ -14,8 +17,13 @@ const Blog: React.FC = () => {
     setBlogsList(blogsData);
   }, [blogsData]);
 
-  const handleClick = (slug: string) => {
+  const handleNavigate = (slug: string) => {
     navigate(`/blog/${slug}`);
+  };
+
+  const getTagColor = (tag: string) => {
+    const status = blogTagStatuses.find((status) => status.name === tag);
+    return status ? status.color : "bg-gray-100 text-gray-800";
   };
 
   return (
@@ -29,23 +37,30 @@ const Blog: React.FC = () => {
           .sort((a, b) => b.time.getTime() - a.time.getTime())
           .map((blog, index) => (
             <div
-              onClick={() => handleClick(blog.slug)}
               key={index}
               className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
             >
               <div className="flex justify-between items-center mb-5 text-gray-500">
-                <span className="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                  {blog.tag}
-                </span>
+                <Tag name={blog.tag} color={getTagColor(blog.tag)} />
                 <span className="text-sm">
                   {formatDate(blog.time.toString())}
                 </span>
               </div>
               {/* Card Content */}
-              <div className="">
-                <h2 className="text-2xl font-bold text-gray-800">
-                  {blog.title}
-                </h2>
+              <div className="grid grid-cols-8 place-content-center">
+                <div className="col-span-7">
+                  <h2 className="text-2xl font-bold text-gray-800">
+                    {blog.title}
+                  </h2>
+                </div>
+                <div className="col-span-1 flex justify-end">
+                  <button
+                    onClick={() => handleNavigate(blog.slug)}
+                    className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  >
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}

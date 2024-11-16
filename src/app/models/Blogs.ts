@@ -4,3 +4,9 @@ export interface BlogsListViewModel {
   time: Date;
   tag: string;
 }
+
+export interface ReviewKnowledgeViewModel {
+  id: number;
+  title: string;
+  answer: JSX.Element;
+}

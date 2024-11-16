@@ -11,7 +11,7 @@ export const blogs: BlogsListViewModel[] = [
     title: "Series ôn tập kiến thức - P1",
     slug: "series-on-tap-kien-thuc-p1",
     time: new Date(2024, 11, 15),
-    tag: "Daily",
+    tag: "Study",
   },
   {
     title: "Người giỏi sẽ trả giá bằng sự cô đơn",

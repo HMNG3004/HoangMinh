@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../../utils/formatDate";
+import { ArrowRight } from "lucide-react";
 
 const ReviewPartOne = () => {
   const navigate = useNavigate();
@@ -45,9 +46,13 @@ const ReviewPartOne = () => {
 
         <div className="flex justify-end w-full">
           <div className="mt-6">
-            <p className="text-blue-500 text-2xl" onClick={handleNavigate}>
-              Next: Backend interview questions →
-            </p>
+            <button
+              className="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+              onClick={handleNavigate}
+            >
+              Next: Backend interview questions{" "}
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </button>
           </div>
         </div>
       </div>
