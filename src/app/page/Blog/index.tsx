@@ -4,7 +4,7 @@ import { formatDate } from "../../utils/formatDate";
 import { blogs } from "../../api/dataBlog";
 import { BlogsListViewModel } from "../../models/Blogs";
 import { blogTagStatuses } from "../../constants/status/blogTagStatuses";
-import Tag from "../../component/tag";
+import Tag from "../../component/ui/tag";
 import { ArrowRight } from "lucide-react";
 
 const Blog: React.FC = () => {
