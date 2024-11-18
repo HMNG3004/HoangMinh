@@ -1,3 +1,4 @@
+import SqlDisplay from "../component/ui/sql_display";
 import { TextBold, TitleBold } from "../component/ui/text-bold";
 import { ReviewKnowledgeViewModel } from "../models/Blogs";
 
@@ -196,9 +197,10 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
           </ul>
 
           <TitleBold>SQL Query:</TitleBold>
-          <img
-            src="https://res.cloudinary.com/dg9a4e1uw/image/upload/v1731749550/BlogImage/fijlhgkhppgqw3vxrwre.png"
-            alt=""
+          <SqlDisplay
+            sqlQuery="SELECT employees.name, departments.department_name
+            FROM employees
+            INNER JOIN departments ON employees.department_id =departments.id;"
           />
 
           <TitleBold className="text-[#2cd659]">Output:</TitleBold>
@@ -221,9 +223,10 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
           </ul>
 
           <TitleBold>SQL Query:</TitleBold>
-          <img
-            src="https://res.cloudinary.com/dg9a4e1uw/image/upload/v1731749917/BlogImage/fqf3ecusm3pzmxv3ijjf.png"
-            alt=""
+          <SqlDisplay
+            sqlQuery="SELECT employees.name, departments.department_name
+            FROM employees
+            LEFT JOIN departments ON employees.department_id =departments.id;"
           />
 
           <TitleBold className="text-[#2cd659]">Output:</TitleBold>
@@ -246,9 +249,10 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
           </ul>
 
           <TitleBold>SQL Query:</TitleBold>
-          <img
-            src="https://res.cloudinary.com/dg9a4e1uw/image/upload/v1731750127/BlogImage/ndekdpdtpgkjxyneyr7z.png"
-            alt=""
+          <SqlDisplay
+            sqlQuery="SELECT employees.name, departments.department_name
+            FROM employees
+            RIGHT JOIN departments ON employees.department_id =departments.id;"
           />
 
           <TitleBold className="text-[#2cd659]">Output:</TitleBold>
@@ -271,9 +275,10 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
           </ul>
 
           <TitleBold>SQL Query:</TitleBold>
-          <img
-            src="https://res.cloudinary.com/dg9a4e1uw/image/upload/v1731750473/BlogImage/zitgjx2t8jilymxuffkr.png"
-            alt=""
+          <SqlDisplay
+            sqlQuery="SELECT employees.name, departments.department_name
+          FROM employees
+          FULL OUTER JOIN departments ON employees.department_id = departments.id;"
           />
 
           <TitleBold className="text-[#2cd659]">Output:</TitleBold>
@@ -285,7 +290,7 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
 
         <div>
           <TitleBold>Other Types of JOIN: </TitleBold>
-          <p>
+          <p className="mb-5">
             Apart from INNER JOIN and OUTER JOIN, there are some other types of
             JOIN that are less commonly used:
           </p>
@@ -313,6 +318,164 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
             </li>
           </ul>
         </div>
+      </>
+    ),
+  },
+  {
+    id: 6,
+    title: "What is statelessness in REST?",
+    answer: (
+      <>
+        <p className="mb-5">
+          In <TextBold>REST (Representational State Transfer)</TextBold> ,
+          statelessness is a fundamental architectural constraint. It means that
+          each request from a client to a server must contain all the
+          information needed to understand and process the request. The server
+          should not rely on any information from previous requests or sessions
+          stored on the server.
+        </p>
+        <p className="mb-5">
+          This ensures that each request is independent and can be processed in
+          isolation, making the system more scalable, reliable, and easier to
+          maintain. Statelessness simplifies the communication between clients
+          and servers, as there is no need for the server to store or manage the
+          client's state between requests.
+        </p>
+        <p className="mb-5">
+          Each request is self-contained, enhancing the overall flexibility and
+          scalability of the RESTful system.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 7,
+    title: "What are Idempotent methods in REST? ",
+    answer: (
+      <>
+        <p className="mb-5">
+          Idempotent implies that the outcome of a single request remains the
+          same, even if the request is called multiple times.
+        </p>
+        <p className="mb-5">
+          In <TextBold>REST API</TextBold> design, it is crucial to create
+          idempotent APIs to handle potential duplicate requests from consumers
+          and ensure fault tolerance.
+        </p>
+        <p className="mb-5">
+          <TextBold>REST</TextBold> inherently provides idempotent methods,
+          which guarantee consistent responses regardless of the number of times
+          a request is made.
+        </p>
+        <p className="mb-5">
+          <TextBold>GET, OPTIONS, TRACE,</TextBold> and{" "}
+          <TextBold>HEAD</TextBold>
+          are idempotent as they are designed for resource retrieval without
+          altering server resource states.
+        </p>
+        <p className="mb-5">
+          <TextBold>PUT</TextBold> methods, used for resource updates, are
+          idempotent because subsequent requests simply overwrite the same
+          resource without changing its state.
+        </p>
+        <p className="mb-5">
+          <TextBold>DELETE</TextBold> methods are considered idempotent since
+          the first request successfully deletes the resource (Status Code 200).
+        </p>
+        <p className="mb-5">
+          Subsequent <TextBold>DELETE</TextBold> requests return a Status Code
+          204, indicating no change in server resources.
+        </p>
+        <p className="mb-5">
+          <TextBold>DELETE</TextBold> may not be idempotent if it leads to
+          multiple deletions of the same resource with each request (e.g.,{" "}
+          <TextBold>DELETE</TextBold> /user/last).
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 8,
+    title: "What is CAP Theorem?",
+    answer: (
+      <>
+        <p>
+          The <TextBold>CAP theorem</TextBold> (Brewer's theorem) states that a
+          distributed system or database can provide only two out of the
+          following three properties:
+        </p>
+
+        <p>
+          <TextBold>Consistency</TextBold>: Similar to ACID Properties,
+          Consistency means that the state of the system before and after
+          transactions should remain consistent.
+        </p>
+        <p>
+          <TextBold>Availability</TextBold>: This states that resources should
+          always be available, there should be a non-error response.
+        </p>
+        <p>
+          <TextBold>Partition tolerance</TextBold>: Even when the network
+          communication fails between the nodes in a cluster, the system should
+          work well.
+        </p>
+        <p>
+          By the CAP theorem, all of these three properties cannot be achieved
+          at the same time.
+        </p>
+        <img
+          src="https://edwardthienhoang.wordpress.com/wp-content/uploads/2020/05/9-1.png"
+          alt=""
+        />
+      </>
+    ),
+  },
+  {
+    id: 9,
+    title: "What is SQL injection? How can we prevent it?",
+    answer: (
+      <>
+        <TitleBold>SQL Injection:</TitleBold>
+        <p>
+          SQL injection is a cyber attack where an attacker injects malicious
+          SQL code into a website's input fields, exploiting vulnerabilities in
+          the code. The aim is to manipulate the executed SQL query, gaining
+          unauthorized access to, modifying, or deleting data, and potentially
+          executing administrative operations on the database.
+        </p>
+        <TitleBold>Example:</TitleBold>
+        <p>In a login form with the SQL query:</p>
+        <SqlDisplay
+          sqlQuery={
+            "SELECT * FROM users WHERE username = 'input_username'AND password = 'input_password';"
+          }
+        />
+        <p>An attacker might input:</p>
+        <SqlDisplay sqlQuery={"input_username = 'admin' OR 1=1 --"} />
+        <p>Resulting in:</p>
+        <SqlDisplay sqlQuery="SELECT * FROM users WHERE username = 'admin' OR 1=1 --' AND password = 'input_password';" />
+        <p>
+          The double hyphen (-- ) comments out the rest of the query, allowing
+          unauthorized access.
+        </p>
+        <TitleBold>Prevention</TitleBold>
+        <ul className="list-decimal">
+          <li>
+            <TextBold>Input Validation</TextBold>
+          </li>
+          <li>
+            <TextBold>Cautious Error Messages</TextBold>
+          </li>
+          <li>
+            <TextBold>Logging and Monitoring</TextBold>
+          </li>
+          <li>
+            <TextBold>Web Application Firewalls (WAFs)</TextBold>
+          </li>
+          <li>
+            <TextBold>Security Audits</TextBold>
+          </li>
+        </ul>
       </>
     ),
   },
