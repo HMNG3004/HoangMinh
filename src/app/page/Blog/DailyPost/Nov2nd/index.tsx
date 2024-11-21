@@ -1,15 +1,17 @@
+import { formatDate } from "../../../../utils/formatDate";
+
 const Nov2nd: React.FC = () => {
   return (
     <>
       <div className="w-full flex justify-center">
-        <div className="flex flex-col ithọs-start text-left w-3/5">
+        <div className="flex flex-col text-left w-3/5">
           {/* Tiêu đề bài viết */}
           <div className="mb-8">
             <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
               Hôm nay mình hơi suy tư
             </h1>
             <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-              November 2, 2024
+              {formatDate(new Date(2024, 11, 2).toString())}
             </p>
           </div>
 

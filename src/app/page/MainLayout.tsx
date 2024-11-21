@@ -1,9 +1,11 @@
 import React from "react";
 import HeaderBar from "../component/header";
 import { Outlet } from "react-router-dom";
+import ScrollToTop from "../routes/ScrollToTop";
 const MainLayout: React.FC = () => {
   return (
     <>
+      <ScrollToTop />
       <div className="grid min-h-screen w-full">
         <div className="flex flex-col w-full">
           <div>

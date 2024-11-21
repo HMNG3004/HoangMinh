@@ -1,24 +1,32 @@
 import { Facebook, Github, Linkedin, Mail } from "lucide-react";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { BlogsListViewModel } from "../../models/Blogs";
+import { blogs } from "../../api/dataBlog";
+import { formatDate } from "../../utils/formatDate";
 
 const HomePage: React.FC = () => {
-  const posts = [
-    {
-      title: "Người giỏi sẽ trả giá bằng sự cô đơn",
-      date: "October 16, 2024",
-      link: "blog/nguoi-gioi-se-tra-gia-bang-su-co-don",
-    },
-    {
-      title: "Nhật ký làm nô lệ cho đồ án tốt nghiệp",
-      date: "October 4, 2024",
-      link: "blog/nhat-ky-lam-no-le-cho-do-an-tot-nghiep",
-    },
-    {
-      title: "Giới thiệu về mình",
-      date: "October 1, 2024",
-      link: "blog/bai-viet-dau-tien",
-    },
-  ];
+  const navigate = useNavigate();
+  const [blogsList, setBlogsList] = React.useState<BlogsListViewModel[]>([]);
+
+  const blogsData = blogs;
+
+  const shuffleAndSelect = (array: BlogsListViewModel[], count: number) => {
+    // Shuffle the array
+    const shuffled = [...array].sort(() => Math.random() - 0.5);
+    // Take the first 'count' elements
+    return shuffled.slice(0, count);
+  };
+
+  useEffect(() => {
+    const randomBlogs = shuffleAndSelect(blogs, 6);
+    setBlogsList(randomBlogs);
+  }, []);
+
+  useEffect(() => {
+    setBlogsList(blogsData);
+  }, [blogsData]);
+
   const socials = [
     {
       name: "GitHub",
@@ -27,7 +35,7 @@ const HomePage: React.FC = () => {
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/in/yourprofile",
+      link: "https://www.linkedin.com/in/hoang-minh-ng-083b12236/",
       icon: <Linkedin />, // Placeholder for LinkedIn icon
     },
     {
@@ -41,6 +49,10 @@ const HomePage: React.FC = () => {
       icon: <Mail />, // Placeholder for Gmail icon
     },
   ];
+
+  const handleNavigate = (slug: string) => {
+    navigate(`/blog/${slug}`);
+  };
   return (
     <div className="flex flex-col items-center">
       <div className="text-left w-4/5">
@@ -73,16 +85,18 @@ const HomePage: React.FC = () => {
         Blog Posts
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 w-4/5">
-        {posts.map((post, index) => (
+        {blogsList.map((post, index) => (
           <div
             key={index}
             className="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
           >
             <h3 className="text-2xl font-bold text-gray-800">{post.title}</h3>
-            <p className="text-gray-600 text-sm mt-2">{post.date}</p>
+            <p className="text-gray-600 text-sm mt-2">
+              {formatDate(post.time.toString())}
+            </p>
             <a
-              href={post.link}
-              className="text-blue-600 font-semibold mt-6 block"
+              className="text-blue-600 font-semibold mt-6 block cursor-pointer"
+              onClick={() => handleNavigate(post.slug)}
             >
               Read More
             </a>

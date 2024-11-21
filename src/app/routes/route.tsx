@@ -4,10 +4,12 @@ import { lazy, Suspense } from "react";
 import HomePage from "../page/Home";
 import FirstBlog from "../page/Blog/FirstBlog";
 import DailyCapstone from "../page/Blog/DailyCapstone";
-import Oct16th from "../page/Blog/Oct16th";
-import Nov2nd from "../page/Blog/Nov2nd";
+import Oct16th from "../page/Blog/DailyPost/Oct16th";
+import Nov2nd from "../page/Blog/DailyPost/Nov2nd";
 import ReviewPartOne from "../page/Blog/SeriesReviewKnowledge/Part_one";
-import BackendInterviewQuestion from "../page/Blog/SeriesReviewKnowledge/PartTwo_Backend";
+import BackendInterviewQuestion from "../page/Blog/SeriesReviewKnowledge/2_PartTwo/PartTwo_Backend";
+import CSharpInterview from "../page/Blog/SeriesReviewKnowledge/3_PartThree/PartThree_CSharp";
+import DailyNov21st from "../page/Blog/DailyPost/Nov21st";
 
 const Blog = lazy(() => import("../page/Blog"));
 const Projects = lazy(() => import("../page/Projects"));
@@ -64,6 +66,14 @@ export const Route = createBrowserRouter([
             ),
           },
           {
+            path: "blog/cang-lon-to-cang-thich-nhung-nguoi-diu-dang",
+            element: (
+              <Suspense fallback={<></>}>
+                <DailyNov21st />
+              </Suspense>
+            ),
+          },
+          {
             path: "blog/hom-nay-minh-hoi-suy-tu",
             element: (
               <Suspense fallback={<></>}>
@@ -84,6 +94,14 @@ export const Route = createBrowserRouter([
             element: (
               <Suspense fallback={<></>}>
                 <BackendInterviewQuestion />
+              </Suspense>
+            ),
+          },
+          {
+            path: "blog/CSharp-interview-question",
+            element: (
+              <Suspense fallback={<></>}>
+                <CSharpInterview />
               </Suspense>
             ),
           },

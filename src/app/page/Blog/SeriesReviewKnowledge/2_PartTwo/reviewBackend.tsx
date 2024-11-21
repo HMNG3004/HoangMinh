@@ -1,6 +1,15 @@
-import SqlDisplay from "../component/ui/sql_display";
-import { TextBold, TitleBold } from "../component/ui/text-bold";
-import { ReviewKnowledgeViewModel } from "../models/Blogs";
+import SqlDisplay from "../../../../component/ui/sql_display";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "../../../../component/ui/table";
+import { TextBold, TitleBold } from "../../../../component/ui/text-bold";
+import { ReviewKnowledgeViewModel } from "../../../../models/Blogs";
+import { clusteredIndexTable } from "../../../../api/dataTable";
 
 export const backendQuestion: ReviewKnowledgeViewModel[] = [
   {
@@ -83,7 +92,7 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
           <li>
             <TextBold className="font-bold">Insertion Anomaly</TextBold>:
             Insertion Anomaly is when one cannot insert a new tuple into a
-            relationship due to lack of data.N
+            relationship due to lack of data.
           </li>
           <li>
             <TextBold className="font-bold">Deletion Anomaly</TextBold>: Delete
@@ -399,27 +408,27 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
     title: "What is CAP Theorem?",
     answer: (
       <>
-        <p>
+        <p className="mb-5">
           The <TextBold>CAP theorem</TextBold> (Brewer's theorem) states that a
           distributed system or database can provide only two out of the
           following three properties:
         </p>
 
-        <p>
+        <p className="mb-5">
           <TextBold>Consistency</TextBold>: Similar to ACID Properties,
           Consistency means that the state of the system before and after
           transactions should remain consistent.
         </p>
-        <p>
+        <p className="mb-5">
           <TextBold>Availability</TextBold>: This states that resources should
           always be available, there should be a non-error response.
         </p>
-        <p>
+        <p className="mb-5">
           <TextBold>Partition tolerance</TextBold>: Even when the network
           communication fails between the nodes in a cluster, the system should
           work well.
         </p>
-        <p>
+        <p className="mb-5">
           By the CAP theorem, all of these three properties cannot be achieved
           at the same time.
         </p>
@@ -436,7 +445,7 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
     answer: (
       <>
         <TitleBold>SQL Injection:</TitleBold>
-        <p>
+        <p className="mb-5">
           SQL injection is a cyber attack where an attacker injects malicious
           SQL code into a website's input fields, exploiting vulnerabilities in
           the code. The aim is to manipulate the executed SQL query, gaining
@@ -444,17 +453,17 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
           executing administrative operations on the database.
         </p>
         <TitleBold>Example:</TitleBold>
-        <p>In a login form with the SQL query:</p>
+        <p className="mb-5">In a login form with the SQL query:</p>
         <SqlDisplay
           sqlQuery={
             "SELECT * FROM users WHERE username = 'input_username'AND password = 'input_password';"
           }
         />
-        <p>An attacker might input:</p>
+        <p className="mb-5">An attacker might input:</p>
         <SqlDisplay sqlQuery={"input_username = 'admin' OR 1=1 --"} />
-        <p>Resulting in:</p>
+        <p className="mb-5">Resulting in:</p>
         <SqlDisplay sqlQuery="SELECT * FROM users WHERE username = 'admin' OR 1=1 --' AND password = 'input_password';" />
-        <p>
+        <p className="mb-5">
           The double hyphen (-- ) comments out the rest of the query, allowing
           unauthorized access.
         </p>
@@ -476,6 +485,135 @@ export const backendQuestion: ReviewKnowledgeViewModel[] = [
             <TextBold>Security Audits</TextBold>
           </li>
         </ul>
+      </>
+    ),
+  },
+  {
+    id: 10,
+    title:
+      "What is the difference between clustered and non clustered indexes?",
+    answer: (
+      <>
+        <Table>
+          <TableHeader className="grid grid-cols-5 text-lg border-b">
+            <TableHead className="col-span-1 flex items-center justify-center text-center">
+              Feature
+            </TableHead>
+            <TableHead className="col-span-2 flex items-center justify-center text-center">
+              Clustered Index
+            </TableHead>
+            <TableHead className="col-span-2 flex items-center justify-center text-center">
+              Non-Clustered Index
+            </TableHead>
+          </TableHeader>
+          <TableBody>
+            {clusteredIndexTable.map((row) => (
+              <TableRow className="grid grid-cols-5 text-lg">
+                <TableCell className="col-span-1 flex items-center justify-center text-center">
+                  {row.Feature}
+                </TableCell>
+                <TableCell className="col-span-2 flex items-center justify-center text-center">
+                  {row.Clustered}
+                </TableCell>
+                <TableCell className="col-span-2 flex items-center justify-center text-center">
+                  {row.NonClustered}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </>
+    ),
+  },
+  {
+    id: 11,
+    title: "What is a web server?",
+    answer: (
+      <>
+        <p className="mb-5">
+          A web server is a software application or hardware device that stores,
+          processes, and delivers web pages to users' browsers. It serves as the
+          foundation for hosting websites and handling client requests by
+          responding with the appropriate web content.
+        </p>
+        <p className="mb-5">
+          Examples of web servers include:
+          <ul className="list-decimal ml-5">
+            <li>
+              <TextBold>Apache HTTP Server:</TextBold>
+            </li>
+            <li>
+              <TextBold>Nginx</TextBold>
+            </li>
+            <li>
+              <TextBold>
+                Microsoft Internet Information Services (IIS):
+              </TextBold>
+            </li>
+            <li>
+              <TextBold>LiteSpeed Web Server:</TextBold>
+            </li>
+            <li>
+              <TextBold>Caddy</TextBold>
+            </li>
+          </ul>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 12,
+    title: "What is MVC Architecture?",
+    answer: (
+      <>
+        <p className="mb-5">
+          The Model-View-Controller (MVC) framework is an architectural/design
+          pattern that separates an application into three main logical
+          components Model, View, and Controller. It comprises three main
+          components: Controller, Model, and View.
+        </p>
+        <p className="mb-5">
+          <TextBold>Controller:</TextBold> The controller focuses on processing
+          business logic and handling incoming requests. The controller
+          instructs the model, manipulates data, and collaborates with the view
+          to produce the final output.
+        </p>
+        <p className="mb-5">
+          <TextBold>View:</TextBold> Responsible for the application's UI logic,
+          the view generates the user interface based on data collected through
+          the controller. It interacts solely with the controller, ensuring
+          separation of concerns.
+        </p>
+        <p className="mb-5">
+          <TextBold>Model:</TextBold> The model handles data-related logic and
+          manages interactions with the database, responding to controller
+          requests and providing necessary data.
+        </p>
+        <p className="mb-5">
+          MVC Design Principles:
+          <ul className="list-decimal ml-5">
+            <li>
+              <TextBold>Divide and conquer:</TextBold> The three components can
+              be independently designed
+            </li>
+            <li>
+              <TextBold>Increase cohesion:</TextBold> The components exhibit
+              strong layer cohesion
+            </li>
+            <li>
+              <TextBold>Reduce coupling:</TextBold> Communication channels
+              between components are minimal and clear
+            </li>
+            <li>
+              <TextBold>Increase reuse:</TextBold> Views and controllers make
+              use of reusable components for UI controls, promoting reusability
+            </li>
+            <li>
+              <TextBold>Design for flexibility:</TextBold> Changing the UI is
+              easily achievable by modifying the view, controller, or both.
+            </li>
+          </ul>
+        </p>
       </>
     ),
   },
