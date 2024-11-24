@@ -17,6 +17,9 @@ const CSharpInterview = () => {
       display: flex !important;
       align-items: center !important;
     }
+    .ant-collapse-content-box {
+      padding: 0px 0px 0px 20px !important;
+    }
   `;
   return (
     <div className="w-full flex justify-center">
@@ -52,7 +55,9 @@ const CSharpInterview = () => {
                       <div className="font-bold text-2xl">{question.title}</div>
                     ),
                     children: (
-                      <div className="text-xl mx-5">{question.answer}</div>
+                      <div className="text-xl ml-5 max-h-[100vh] overflow-auto">
+                        <div className="mr-3 mt-3">{question.answer}</div>
+                      </div>
                     ),
                   },
                 ]}

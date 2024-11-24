@@ -19,12 +19,12 @@ export const blogs: BlogsListViewModel[] = [
     time: new Date(2024, 11, 15),
     tag: "Study",
   },
-  {
-    title: "Hôm nay mình hơi suy tư",
-    slug: "hom-nay-minh-hoi-suy-tu",
-    time: new Date(2024, 11, 2),
-    tag: "Daily",
-  },
+  // {
+  //   title: "Hôm nay mình hơi suy tư",
+  //   slug: "hom-nay-minh-hoi-suy-tu",
+  //   time: new Date(2024, 11, 2),
+  //   tag: "Daily",
+  // },
   {
     title: "Series ôn tập kiến thức - P1",
     slug: "series-on-tap-kien-thuc-p1",

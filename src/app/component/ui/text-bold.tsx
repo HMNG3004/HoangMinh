@@ -17,4 +17,16 @@ const TitleBold = React.forwardRef<
 ));
 TitleBold.displayName = "TitleBold";
 
-export { TextBold, TitleBold };
+const TextCode = React.forwardRef<
+  HTMLTableElement,
+  React.HTMLAttributes<HTMLTableElement>
+>(({ className, ...props }, ref) => (
+  <span
+    ref={ref}
+    className={cn("py-0.5 px-1 bg-gray-300 rounded-md", className)}
+    {...props}
+  />
+));
+TextCode.displayName = "TextCode";
+
+export { TextBold, TitleBold, TextCode };
