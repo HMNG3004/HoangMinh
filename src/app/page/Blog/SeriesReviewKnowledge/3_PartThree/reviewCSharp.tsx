@@ -25,7 +25,7 @@ export const CSharpQuestion: ReviewKnowledgeViewModel[] = [
     title: "What is inheritance? Does C# support multiple inheritance?",
     answer: (
       <>
-        <p className="md-3">
+        <p className="mb-3">
           Inheritance means acquiring some of the properties from a master
           class.
           <img
@@ -263,22 +263,152 @@ Husky
           <TitleBold>Benefits of Extension Methods:</TitleBold>
           <ul className="list-decimal">
             <li>
-              <TextBold>Enhance Readability:</TextBold>{" "}
-              They make code more intuitive, as the method appears as part of
-              the type.{" "}
+              <TextBold>Enhance Readability:</TextBold> They make code more
+              intuitive, as the method appears as part of the type.{" "}
             </li>
             <li>
-              <TextBold>Non-Invasive:</TextBold>{" "}
-              They don’t require altering existing classes, making them useful
-              for adding functionality to classes you don’t own (e.g., .NET
-              framework classes).
+              <TextBold>Non-Invasive:</TextBold> They don’t require altering
+              existing classes, making them useful for adding functionality to
+              classes you don’t own (e.g., .NET framework classes).
             </li>
             <li>
-              <TextBold>Reuse and Modularity:</TextBold>{" "}
-              They promote reusability by encapsulating additional functionality
-              in reusable static methods.
+              <TextBold>Reuse and Modularity:</TextBold> They promote
+              reusability by encapsulating additional functionality in reusable
+              static methods.
             </li>
           </ul>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 5,
+    title: "What is the difference between an abstract class and an interface?",
+    answer: (
+      <>
+        <p className="mb-3">
+          <TitleBold>Abstract Class:</TitleBold>
+          <ul className="ml-5 list-disc">
+            <li>
+              Can have <TextBold>fields</TextBold> and{" "}
+              <TextBold>constructors</TextBold>.
+            </li>
+            <li>
+              Can contain <TextBold>implemented methods</TextBold> (non-abstract
+              methods with a body).
+            </li>
+            <li>
+              Supports <TextBold>access modifiers</TextBold> for methods and
+              properties.
+            </li>
+            <li>
+              A class can <TextBold>inherit only one</TextBold> abstract class.
+            </li>
+          </ul>
+        </p>
+        <hr />
+        <p className="mb-3">
+          <TitleBold>Interface:</TitleBold>
+          <ul className="ml-5 list-disc">
+            <li>
+              Cannot have fields or constructors; it’s purely a contract for
+              implementing members.
+            </li>
+            <li>
+              All members are{" "}
+              <TextBold>implicitly public and abstract</TextBold> (no
+              implementation).
+            </li>
+            <li>
+              A class can <TextBold>implement multiple</TextBold> interfaces.
+            </li>
+          </ul>
+        </p>
+        <hr />
+        <p className="mb-3">
+          <TitleBold>Abstract class example:</TitleBold>
+          <CodeDisplay
+            code={`using System;
+
+abstract class Animal
+{
+    public string Name { get; set; }
+
+    public Animal(string name)
+    {
+        Name = name;
+    }
+
+    // Abstract method (no implementation)
+    public abstract void Speak();
+
+    // Non-abstract method (with implementation)
+    public void Eat()
+    {
+        Console.WriteLine($"{Name} is eating.");
+    }
+}
+
+class Dog : Animal
+{
+    public Dog(string name) : base(name) { }
+
+    // Implementing the abstract method
+    public override void Speak()
+    {
+        Console.WriteLine($"{Name} says: Woof!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog dog = new Dog("Buddy");
+        dog.Speak();
+        dog.Eat();
+    }
+}`}
+            language="csharp"
+            output={"Buddy says: Woof!\nBuddy is eating."}
+          />
+
+          <TitleBold>Interface Example:</TitleBold>
+          <CodeDisplay
+            code={`using System;
+
+interface IAnimal
+{
+    // Interface members are implicitly public and abstract
+    void Speak();
+    void Eat();
+}
+
+class Cat : IAnimal
+{
+    public void Speak()
+    {
+        Console.WriteLine("Meow!");
+    }
+
+    public void Eat()
+    {
+        Console.WriteLine("Cat is eating.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        IAnimal cat = new Cat();
+        cat.Speak();
+        cat.Eat();
+    }
+}`}
+            language="csharp"
+            output={"Meow!\nCat is eating."}
+          />
         </p>
       </>
     ),
