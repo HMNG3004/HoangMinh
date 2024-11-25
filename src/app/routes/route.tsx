@@ -2,14 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../page/MainLayout";
 import { lazy, Suspense } from "react";
 import HomePage from "../page/Home";
-import FirstBlog from "../page/Blog/FirstBlog";
-import DailyCapstone from "../page/Blog/DailyCapstone";
-import Oct16th from "../page/Blog/DailyPost/Oct16th";
-import Nov2nd from "../page/Blog/DailyPost/Nov2nd";
-import ReviewPartOne from "../page/Blog/SeriesReviewKnowledge/Part_one";
-import BackendInterviewQuestion from "../page/Blog/SeriesReviewKnowledge/2_PartTwo/PartTwo_Backend";
-import CSharpInterview from "../page/Blog/SeriesReviewKnowledge/3_PartThree/PartThree_CSharp";
-import DailyNov21st from "../page/Blog/DailyPost/Nov21st";
 
 const Blog = lazy(() => import("../page/Blog"));
 const Projects = lazy(() => import("../page/Projects"));
@@ -17,6 +9,26 @@ const Resume = lazy(() => import("../page/Resume"));
 const Contact = lazy(() => import("../page/Contact"));
 const About = lazy(() => import("../page/About"));
 const Error = lazy(() => import("../page/Error"));
+
+const DailyCapstoneNov25th = lazy(
+  () => import("../page/Blog/DailyCapstone/2-Nov25th")
+);
+const DailyNov21st = lazy(() => import("../page/Blog/DailyPost/Nov21st"));
+const CSharpInterview = lazy(
+  () =>
+    import("../page/Blog/SeriesReviewKnowledge/3_PartThree/PartThree_CSharp")
+);
+const BackendInterviewQuestion = lazy(
+  () => import("../page/Blog/SeriesReviewKnowledge/2_PartTwo/PartTwo_Backend")
+);
+const ReviewPartOne = lazy(
+  () => import("../page/Blog/SeriesReviewKnowledge/Part_one")
+);
+const Nov2nd = lazy(() => import("../page/Blog/DailyPost/Nov2nd"));
+const Oct16th = lazy(() => import("../page/Blog/DailyPost/Oct16th"));
+const DailyCapstone = lazy(() => import("../page/Blog/DailyCapstone/1-Nov4th"));
+const FirstBlog = lazy(() => import("../page/Blog/FirstBlog"));
+
 export const Route = createBrowserRouter([
   {
     path: "/",
@@ -102,6 +114,14 @@ export const Route = createBrowserRouter([
             element: (
               <Suspense fallback={<></>}>
                 <CSharpInterview />
+              </Suspense>
+            ),
+          },
+          {
+            path: "blog/chill-cuoi-tuan-voi-do-an-tot-nghiep",
+            element: (
+              <Suspense fallback={<></>}>
+                <DailyCapstoneNov25th />
               </Suspense>
             ),
           },

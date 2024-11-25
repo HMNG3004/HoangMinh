@@ -2,6 +2,12 @@ import { BlogsListViewModel } from "../models/Blogs";
 
 export const blogs: BlogsListViewModel[] = [
   {
+    title: "Chill cuối tuần với đồ án tốt nghiệp",
+    slug: "chill-cuoi-tuan-voi-do-an-tot-nghiep",
+    time: new Date(2024, 11, 24),
+    tag: "Study",
+  },
+  {
     title: "Ôn tập kiến thức phần 3: C#",
     slug: "CSharp-interview-question",
     time: new Date(2024, 11, 21),
