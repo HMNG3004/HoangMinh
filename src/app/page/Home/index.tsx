@@ -60,8 +60,8 @@ const HomePage: React.FC = () => {
     navigate(`/blog/${slug}`);
   };
   return (
-    <div className="flex flex-col items-start">
-      <div className="text-left">
+    <div className="flex flex-col items-center">
+      <div className="text-left" style={{ width: "90%" }}>
         <h1 className="text-2xl md:text-5xl font-bold text-gray-800">
           Hi, I’m Hoang Minh
         </h1>
@@ -88,7 +88,7 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-12 gap-5 mt-8 ">
+      <div className="grid grid-cols-12 gap-5 mt-8" style={{ width: "90%" }}>
         <div className="col-span-12 md:col-span-9 border-2 rounded-2xl p-6 bg-white">
           <div className="w-full flex justify-center">
             <div className="flex flex-col items-start text-left">
