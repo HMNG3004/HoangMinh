@@ -413,4 +413,64 @@ class Program
       </>
     ),
   },
+  {
+    id: 6,
+    title: "What are the types of classes in C#?",
+    answer: (
+      <>
+        <p className="mb-3">
+          Class is an entity that encapsulates all the properties of its objects
+          and instances as a single unit. C# has four types of such classes:
+        </p>
+        <ul className="ml-5 list-disc">
+          <li>
+            <TextBold>Static class</TextBold>: Static class, defined by the
+            keyword 'static' does not allow inheritance. Therefore, you cannot
+            create an object for a static class.
+          </li>
+          <li>
+            <TextBold>Partial class</TextBold>: Partial class, defined by the
+            keyword 'partial' allows its members to partially divide or share
+            source (.cs) files.
+          </li>
+          <li>
+            <TextBold>Abstract class</TextBold>: Abstract classes are classes
+            that cannot be instantiated where you cannot create objects.
+            Abstract classes work on the OOPS concept of abstraction.
+            Abstraction helps to extract essential details and hide the
+            unessential ones.
+          </li>
+          <li>
+            <TextBold>Sealed class</TextBold>: Sealed classes are classes that
+            cannot be inherited. Use the keyword sealed to restrict access to
+            users to inherit that class.{" "}
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 7,
+    title: "What is garbage collection in C#?",
+    answer: (
+      <>
+        <p className="mb-3">
+          Garbage collection is the process of freeing up memory that is
+          captured by unwanted objects. When you create a class object,
+          automatically some memory space is allocated to the object in the heap
+          memory. Now, after you perform all the actions on the object, the
+          memory space occupied by the object becomes waste. It is necessary to
+          free up memory. Garbage collection happens in three cases:
+        </p>
+        <ul className="ml-5 list-disc">
+          <li>
+            If the occupied memory by the objects exceeds the pre-set threshold
+            value.
+          </li>
+          <li>If the garbage collection method is called.</li>
+          <li>If your system has low physical memory.</li>
+        </ul>
+      </>
+    ),
+  },
 ];

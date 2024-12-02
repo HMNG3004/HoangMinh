@@ -12,7 +12,7 @@ const MainLayout: React.FC = () => {
             <HeaderBar />
           </div>
           <div className="relative">
-            <div className="grid flex-1 items-start gap-4 sm:px-0 sm:py-0 md:gap-4 mt-12">
+            <div className="grid flex-1 items-start gap-4 sm:px-0 sm:py-0 md:gap-4 mt-12 bg-[#f9f9f9]">
               <div className="container mx-auto py-12">
                 <Outlet />
               </div>

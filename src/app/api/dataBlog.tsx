@@ -49,10 +49,4 @@ export const blogs: BlogsListViewModel[] = [
     time: new Date(2024, 10, 4),
     tag: "Daily",
   },
-  {
-    title: "Giới thiệu về mình",
-    slug: "bai-viet-dau-tien",
-    time: new Date(2024, 10, 1),
-    tag: "Introduce",
-  },
 ];
