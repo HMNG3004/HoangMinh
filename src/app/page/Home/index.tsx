@@ -41,12 +41,12 @@ const HomePage: React.FC = () => {
     },
     {
       name: "LinkedIn",
-      link: "https://www.linkedin.com/in/hoang-minh-ng-083b12236/",
+      link: "https://www.linkedin.com/in/hmng3004/",
       icon: <Linkedin />, // Placeholder for LinkedIn icon
     },
     {
       name: "Facebook",
-      link: "https://www.facebook.com/hoangminhng.dev/",
+      link: "https://www.facebook.com/HMNG3004/",
       icon: <Facebook />, // Placeholder for Facebook icon
     },
     {
@@ -66,7 +66,7 @@ const HomePage: React.FC = () => {
           Hi, I’m Hoang Minh
         </h1>
         <p className="text-xl text-gray-600 mt-4">First coffee then coding</p>
-        <p className="text-lg text-gray-500 mt-2">
+        <p className="text-xl text-gray-500 mt-2">
           Cảm ơn bạn đã ghé thăm blog của tớ
         </p>
 
@@ -94,31 +94,31 @@ const HomePage: React.FC = () => {
             <div className="flex flex-col items-start text-left">
               {/* Tiêu đề và Ngày */}
               <div>
-                <div className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-800 md:text-5xl lg:text-6xl dark:text-white">
+                <div className="mb-4 text-3xl font-bold leading-none tracking-tight text-gray-800 md:text-4xl dark:text-white">
                   Giới thiệu về mình
                 </div>
-                <div className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                <div className="mb-6 text-md font-normal text-gray-500 lg:text-xl dark:text-gray-400">
                   {formatDate(new Date(2024, 10, 1).toString())}
                 </div>
               </div>
 
               {/*Cảm ơn*/}
               <div>
-                <div className="text-4xl font-bold dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold dark:text-white">
                   Cảm ơn bạn đã ghé thăm blog của mình
                 </div>
-                <div className="my-4 text-2xl text-gray-700">
-                  Mình rất vui và hạnh phúc khi bạn dành thời gian để đọc những
-                  dòng chữ này. Hy vọng rằng những bài viết của mình sẽ mang lại
-                  giá trị cho bạn và giúp bạn hiểu thêm về mình.
+                <div className="my-4 text-md lg:text-xl text-gray-700">
+                  Mình rất vui khi bạn dành thời gian để đọc những dòng chữ này.
+                  Hy vọng rằng những bài viết của mình sẽ mang lại giá trị cho
+                  bạn và giúp bạn hiểu thêm về mình.
                 </div>
               </div>
               {/* Giới thiệu về bản thân */}
               <div>
-                <div className="text-4xl font-bold dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold dark:text-white">
                   Mình là ai?
                 </div>
-                <div className="my-4 text-2xl text-gray-700">
+                <div className="my-4 text-md lg:text-xl text-gray-700">
                   Chào bạn! Mình là Hoàng Minh, một sinh viên năm cuối ngành Kỹ
                   thuật Phần mềm tại Đại học FPT - TPHCM. Mình yêu thích công
                   nghệ và đang dấn thân vào con đường phát triển web và di động.
@@ -127,10 +127,10 @@ const HomePage: React.FC = () => {
 
               {/* Định hướng của mình */}
               <div>
-                <div className="text-4xl font-bold dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold dark:text-white">
                   Định hướng của mình
                 </div>
-                <div className="my-4 text-2xl text-gray-700">
+                <div className="my-4 text-md lg:text-xl text-gray-700">
                   Mình đang hướng tới việc trở thành một lập trình viên
                   full-stack, có khả năng làm việc trên cả nền tảng web và di
                   động. Mình sẽ không ngừng học hỏi và thực hành để phát triển
@@ -140,10 +140,10 @@ const HomePage: React.FC = () => {
 
               {/* Mục đích của blog này */}
               <div>
-                <div className="text-4xl font-bold dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold dark:text-white">
                   Tại sao blog này ra đời?
                 </div>
-                <div className="my-4 text-2xl text-gray-700">
+                <div className="my-4 text-md lg:text-xl text-gray-700">
                   Blog này được tạo ra để{" "}
                   <span className="line-through">mình khè mọi người</span> mình
                   ghi lại những hoạt động hàng ngày trong cuộc sống, công việc
@@ -155,10 +155,10 @@ const HomePage: React.FC = () => {
 
               {/* Những gì bạn có thể mong đợi */}
               <div>
-                <div className="text-4xl font-bold dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold dark:text-white">
                   Những gì bạn có thể mong đợi
                 </div>
-                <div className="my-4 text-2xl text-gray-700">
+                <div className="my-4 text-md lg:text-xl text-gray-700">
                   Mình sẽ chia sẻ về những dự án mình đang làm, những kỹ thuật
                   mới mình học được, và cả những câu chuyện nhỏ trong cuộc sống
                   hàng ngày. Hy vọng rằng những bài viết này không chỉ giúp mình
@@ -168,10 +168,10 @@ const HomePage: React.FC = () => {
 
               {/* Lời kết */}
               <div>
-                <div className="text-4xl font-bold dark:text-white">
+                <div className="text-2xl md:text-3xl font-bold dark:text-white">
                   Lời kết
                 </div>
-                <div className="my-4 text-2xl text-gray-700">
+                <div className="my-4 text-md lg:text-xl text-gray-700">
                   Đây là bài viết đầu tiên của mình, và mình hy vọng rằng bạn sẽ
                   tìm thấy giá trị trong những gì mình chia sẻ. Hãy theo dõi để
                   không bỏ lỡ những nội dung thú vị về lập trình, công nghệ và

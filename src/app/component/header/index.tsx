@@ -12,7 +12,7 @@ const HeaderBar: React.FC = () => {
     // { name: "Projects", path: "/projects" },
     // { name: "Resume", path: "/resume" },
     // { name: "Contact", path: "/contact" },
-    // { name: "About", path: "/about" },
+    { name: "About", path: "/about" },
   ];
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const HeaderBar: React.FC = () => {
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div className="w-9/10 flex flex-wrap items-center justify-between mx-auto p-4">
           <a
-            href="https://hoang-minh.vercel.app/"
+            href="https://www.hoangminhng.social"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
