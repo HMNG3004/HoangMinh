@@ -13,6 +13,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@react-pdf/renderer": "^4.1.5",
     "antd": "^5.22.1",
     "clsx": "^2.1.1",
     "flowbite-react": "^0.10.1",
@@ -22,6 +26,7 @@
     "radix-ui": "^1.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-pdf-tailwind": "^2.3.0",
     "react-router-dom": "^6.26.2",
     "react-syntax-highlighter": "^15.6.1",
     "sql-formatter": "^15.4.6",

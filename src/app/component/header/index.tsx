@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import ReactPDF from "@react-pdf/renderer";
+import { FileUser } from "lucide-react";
+import ContractPDFFormat from "../../page/Resume/ResumePDFFormat";
 
 const HeaderBar: React.FC = () => {
   const navigate = useNavigate();
@@ -10,7 +13,14 @@ const HeaderBar: React.FC = () => {
     { name: "Home", path: "/" },
     { name: "Blog", path: "/blog" },
     // { name: "Projects", path: "/projects" },
-    // { name: "Resume", path: "/resume" },
+    {
+      name: (
+        <p className="flex items-center justify-center w-fit">
+          <span>CV</span> <FileUser className="w-5 h-5" />
+        </p>
+      ),
+      path: "/resume",
+    },
     // { name: "Contact", path: "/contact" },
     { name: "About", path: "/about" },
   ];
@@ -44,9 +54,22 @@ const HeaderBar: React.FC = () => {
     }
   };
 
+  const handleGeneratePDF = async () => {
+    const pdfInstance = ReactPDF.pdf(<ContractPDFFormat />); // Create PDF instance
+    const blob = await pdfInstance.toBlob(); // Convert to Blob
+    const url = URL.createObjectURL(blob); // Create a Blob URL
+
+    // Open the PDF in a new tab
+    window.open(url);
+  };
+
   const handleClick = (path: string) => {
-    navigate(path);
-    setIsNavOpen(false);
+    if (path === "/resume") {
+      handleGeneratePDF();
+    } else {
+      navigate(path);
+      setIsNavOpen(false);
+    }
   };
 
   return (
