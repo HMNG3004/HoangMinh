@@ -70,7 +70,7 @@ const socials = [
   },
   {
     name: "hoangminhng.social",
-    link: "https://www.facebook.com/HMNG3004/",
+    link: "https://www.hoangminhng.social/",
     icon: faHome, // Placeholder for Facebook icon
   },
 ];
@@ -82,49 +82,41 @@ const phoneNumber = {
 
 const workExperiences = [
   {
+    projectName: "FPT Software Internship Program",
+    role: "Software Developer Intern",
+    period: "09/2023 - 12/2023",
+    description: [
+      "Engaged in full-cycle software projects, contributing to both front-end design elements and critical back-end databases.",
+      "Collaborated with the team to resolve database errors, ensuring data integrity and accuracy.",
+      "Developed the front-end of internal applications using Angular, improving user interfaces and enhancing user experience.",
+    ],
+  },
+];
+
+const projects = [
+  {
     projectName: "Mechanical Machinery Rental Management System",
-    role: "Software Developer (Front-End)",
+    role: "Software Developer (Front-End) - ReactJs, React Native",
     period: "09/2024 - Present",
-    description: "Developed the front-end of the application using React.",
-    achievements: [
-      "Integrated real-time data updates for rental availability and status.",
-      "Collaborated closely with the back-end team to ensure smooth API integration.",
-      "Ensured cross-browser compatibility and mobile responsiveness for all features.",
+    description: [
+      "Capstone project for the Bachelor's degree in Software Engineering.",
+      "Engineered a robust system for managing mechanical equipment rentals, leading to a 15% increase in customer satisfaction scores as a result of improved communication and streamlined booking processes.",
     ],
   },
   {
     projectName: "Hostel Rental Platform",
-    role: "Software Developer (Full-Stack)",
+    role: "Software Developer (Full-Stack) - ReactJs, ASP.NET Core",
     period: "05/2024 - 08/2024",
-    description:
-      "Developed both front-end and back-end functionalities for the hostel rental platform.",
-    achievements: [
-      "Implemented real-time communication features for tenant and hostel owner interaction.",
-      "Integrated a secure and reliable payment gateway for processing tenant bookings and payments.",
-      "Developed features for tenant management, booking, and payment tracking.",
+    description: [
+      "Developed an innovative platform that streamlined the process of locating and managing student rental accommodations, resulting in a 30% reduction in time spent on property searches for over 1,000 students.",
     ],
   },
   {
     projectName: "Real Estate Auction Platform",
-    role: "Software Developer (Full-Stack)",
+    role: "Software Developer (Full-Stack) - ReactJs, ASP.NET Core",
     period: "01/2024 - 04/2024",
-    description:
-      "Developed both front-end and back-end functionalities for the real estate auction platform.",
-    achievements: [
-      "Integrated real-time bidding functionality, allowing users to place bids and receive instant updates.",
-      "Implemented secure user authentication and bid tracking features to ensure the integrity of the auction process.",
-    ],
-  },
-  {
-    projectName: "FPT Software Internship Program",
-    role: "Software Developer Intern",
-    period: "01/2024 - 04/2024",
-    description:
-      "Contributed to both front-end development and data-related tasks during the internship at FPT Software.",
-    achievements: [
-      "Collaborated with the team to resolve database errors, ensuring data integrity and accuracy.",
-      "Gained hands-on experience in Data Science, learning key concepts and applying them to real-world problems.",
-      "Developed the front-end of internal applications using Angular, improving user interfaces and enhancing user experience.",
+    description: [
+      "Developing a system to support the property auction experience, designed to manage up to 100 property listings and facilitate participation for a classroom-sized audience, simplifying the entire process for users.",
     ],
   },
 ];
@@ -148,10 +140,10 @@ const ContractPDFFormat = () => {
               Nguyen Van Hoang Minh
             </Text>
             <Text style={tw("text-xl font-semibold text-[#2c3e50]")}>
-              Fullstack developer
+              Fullstack Developer
             </Text>
             <Text style={tw("text-base font-semibold text-[#2c3e50]")}>
-              Thu duc, Ho Chi Minh City |{" "}
+              Thu Duc, Ho Chi Minh City |{" "}
               <FontAwesomeIcon
                 faIcon={phoneNumber.icon}
                 style={{
@@ -211,7 +203,7 @@ const ContractPDFFormat = () => {
         <View style={styles.section}>
           <Text
             style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full mb-3 leading-5 border-b-2 border-[#cccccc]"
+              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
             )}
           >
             Work Experience
@@ -220,14 +212,60 @@ const ContractPDFFormat = () => {
           {workExperiences.map((experience, index) => (
             <View
               key={index}
-              style={tw("mb-6 w-full flex flex-col items-start")}
+              style={tw("mb-4 w-full flex flex-col items-start")}
             >
               {/* Project Name and Period */}
               <View
                 style={tw("flex flex-row w-full items-center justify-between")}
               >
                 <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
-                  {experience.projectName}
+                  &#8226; {experience.projectName}
+                </Text>
+                <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
+                  {experience.period}
+                </Text>
+              </View>
+
+              {/* Role */}
+              <Text style={tw("text-[#34495e] font-semibold")}>
+                {experience.role}
+              </Text>
+
+              {/* Achievements (if any) */}
+              {experience.description && experience.description.length > 0 && (
+                <View style={tw("pl-2")}>
+                  {experience.description.map((description, idx) => (
+                    <Text key={idx} style={tw("text-[#2c3e50] text-base")}>
+                      &#9675; {description}
+                    </Text>
+                  ))}
+                </View>
+              )}
+            </View>
+          ))}
+        </View>
+
+        {/* Projects Section */}
+        <View style={styles.section}>
+          <Text
+            style={tw(
+              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
+            )}
+          >
+            Projects
+          </Text>
+
+          {projects.map((experience, index) => (
+            <View
+              key={index}
+              style={tw("mb-4 w-full flex flex-col items-start")}
+            >
+              {/* Project Name and Period */}
+              <View
+                style={tw("flex flex-row w-full items-center justify-between")}
+              >
+                <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
+                  &#8226; {experience.projectName}
                 </Text>
                 <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
                   {experience.period}
@@ -240,23 +278,15 @@ const ContractPDFFormat = () => {
               </Text>
 
               {/* Description */}
-              {experience.description && (
-                <Text style={tw("text-[#2c3e50] font-normal mb-2")}>
-                  {experience.description}
-                </Text>
+              {experience.description && experience.description.length > 0 && (
+                <View style={tw("pl-2")}>
+                  {experience.description.map((description, idx) => (
+                    <Text key={idx} style={tw("text-[#2c3e50] text-base")}>
+                      &#9675; {description}
+                    </Text>
+                  ))}
+                </View>
               )}
-
-              {/* Achievements (if any) */}
-              {experience.achievements &&
-                experience.achievements.length > 0 && (
-                  <View style={tw("pl-4")}>
-                    {experience.achievements.map((achievement, idx) => (
-                      <Text key={idx} style={tw("text-[#2c3e50] text-sm")}>
-                        - {achievement}
-                      </Text>
-                    ))}
-                  </View>
-                )}
             </View>
           ))}
         </View>
@@ -265,18 +295,18 @@ const ContractPDFFormat = () => {
         <View style={styles.section}>
           <Text
             style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full mb-3 leading-5 border-b-2 border-[#cccccc]"
+              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
             )}
           >
             Education
           </Text>
 
           <View
-            style={tw("flex flex-row w-full justify-between items-center mb-6")}
+            style={tw("flex flex-row w-full justify-between items-center mb-4")}
           >
             <View style={tw("flex flex-col items-start")}>
-              <Text>FPT University</Text>
-              <Text>Bachelor of Software Engineering </Text>
+              <Text>&#8226; FPT University</Text>
+              <Text>&#8226; Bachelor of Software Engineering </Text>
             </View>
             <View style={tw("flex flex-col items-start")}>
               <Text>Aug. 2021 – 2024 (expected)</Text>
@@ -289,7 +319,7 @@ const ContractPDFFormat = () => {
         <View style={styles.section}>
           <Text
             style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full mb-3 leading-5 border-b-2 border-[#cccccc]"
+              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
             )}
           >
             Skills
@@ -297,10 +327,10 @@ const ContractPDFFormat = () => {
           {/* Programming Languages */}
           <View style={styles.skillsWrapper}>
             <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              Programming Languages
+              &#8226; Programming Languages
             </Text>
             {skills.programmingLanguages.map((language, index) => (
-              <Text key={index} style={tw("mr-3")}>
+              <Text key={index} style={tw("mr-3 text-base")}>
                 {language}
               </Text>
             ))}
@@ -309,7 +339,7 @@ const ContractPDFFormat = () => {
           {/* Libraries / Frameworks */}
           <View style={styles.skillsWrapper}>
             <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              Libraries / Frameworks
+              &#8226; Libraries / Frameworks
             </Text>
             {skills.libraries.map((library, index) => (
               <Text key={index} style={tw("mr-3")}>
@@ -321,7 +351,7 @@ const ContractPDFFormat = () => {
           {/* Databases */}
           <View style={styles.skillsWrapper}>
             <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              Databases
+              &#8226; Databases
             </Text>
             {skills.databases.map((database, index) => (
               <Text key={index} style={tw("mr-3")}>
@@ -333,7 +363,7 @@ const ContractPDFFormat = () => {
           {/* Other Technologies */}
           <View style={styles.skillsWrapper}>
             <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              Other Technologies
+              &#8226; Other Technologies
             </Text>
             {skills.otherTechnologies.map((tech, index) => (
               <Text key={index} style={tw("mr-3")}>
