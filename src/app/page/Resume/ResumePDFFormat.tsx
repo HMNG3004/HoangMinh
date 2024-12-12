@@ -10,7 +10,7 @@ import {
 import { createTw } from "react-pdf-tailwind";
 import FontAwesomeIcon from "../../component/FontAwsomeIcon";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 // Register Fonts
 Font.register({
@@ -44,11 +44,13 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 1.5,
     backgroundColor: "#f9f9f9",
+    paddingTop: 30,
   },
   section: {
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "flex-start",
+    marginBottom: 15,
   },
   skillsWrapper: {
     display: "flex",
@@ -56,6 +58,45 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
   },
 });
+
+const headerTailwindStyle = {
+  name: "text-2xl leading-5 font-bold text-[#2c3e50]",
+  jobTitle: "text-xl leading-5 font-semibold text-[#2c3e50]",
+  contactInfo: "text-base font-semibold text-[#2c3e50]",
+  socials: "flex flex-row justify-center items-center gap-5",
+  socialLink: "flex flex-row items-center justify-center",
+  socialText: "text-base text-[#2c3e50]",
+};
+
+const projectTailwindStyle = {
+  sectionTitle:
+    "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]",
+  sectionBody: "w-full flex flex-col items-start gap-2",
+  item: "w-full flex flex-col items-start",
+  itemHeader: "flex flex-row w-full items-center justify-between",
+  projectName: "text-[#7f8c8d] font-semibold text-xl leading-5",
+  period: "text-[#7f8c8d] font-semibold",
+  role: "text-[#34495e] font-semibold pl-3",
+  description: "text-[#2c3e50] text-base",
+};
+
+const educationTailwindStyle = {
+  sectionTitle:
+    "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]",
+  itemHeader: "flex flex-row w-full justify-between items-center",
+  universityName: "text-[#7f8c8d] font-semibold text-xl leading-5",
+  period: "text-[#7f8c8d] font-semibold",
+  major: "text-[#34495e] font-semibold pl-3",
+  location: "text-sm text-[#7f8c8d] italic font-semibold",
+  course: "pl-3 text-base text-[#34495e]",
+};
+
+const skillsTailwindStyle = {
+  sectionTitle:
+    "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]",
+  skillName: "font-semibold text-[#34495e] mr-2",
+  technology: "mr-1 text-[#2c3e50] text-base",
+};
 
 const socials = [
   {
@@ -100,7 +141,7 @@ const projects = [
     period: "09/2024 - Present",
     description: [
       "Capstone project for the Bachelor's degree in Software Engineering.",
-      "Engineered a robust system for managing mechanical equipment rentals, leading to a 15% increase in customer satisfaction scores as a result of improved communication and streamlined booking processes.",
+      "Engineer a robust system for managing mechanical equipment rentals, leading to a 15% increase in customer satisfaction scores as a result of improved communication and streamlined booking processes.",
     ],
   },
   {
@@ -116,16 +157,16 @@ const projects = [
     role: "Software Developer (Full-Stack) - ReactJs, ASP.NET Core",
     period: "01/2024 - 04/2024",
     description: [
-      "Developing a system to support the property auction experience, designed to manage up to 100 property listings and facilitate participation for a classroom-sized audience, simplifying the entire process for users.",
+      "Developed a system to support the property auction experience, designed to manage up to 100 property listings and facilitate participation for a classroom-sized audience, simplifying the entire process for users.",
     ],
   },
 ];
 
 const skills = {
-  programmingLanguages: ["Java", "C#", "TypeScript", "JavaScript"],
-  libraries: ["ASP.NET", "React", "Angular"],
-  databases: ["SQL Server", "PostgreSQL", "MongoDB"],
-  otherTechnologies: ["Azure", "Docker"],
+  programmingLanguages: ["Java,", "C#,", "TypeScript,", "JavaScript"],
+  libraries: ["ASP.NET,", "React,", "Angular"],
+  databases: ["SQL Server,", "PostgreSQL,", "MongoDB"],
+  othersk: ["Azure,", "Docker"],
 };
 
 const ContractPDFFormat = () => {
@@ -136,13 +177,13 @@ const ContractPDFFormat = () => {
         <View style={tw("flex flex-row justify-between mb-4")}>
           <View style={tw("flex flex-col items-start")}>
             {/* Name */}
-            <Text style={tw("text-2xl leading-7 font-bold text-[#2c3e50]")}>
+            <Text style={tw(headerTailwindStyle.name.toString())}>
               Nguyen Van Hoang Minh
             </Text>
-            <Text style={tw("text-xl font-semibold text-[#2c3e50]")}>
+            <Text style={tw(headerTailwindStyle.jobTitle.toString())}>
               Fullstack Developer
             </Text>
-            <Text style={tw("text-base font-semibold text-[#2c3e50]")}>
+            <Text style={tw(headerTailwindStyle.contactInfo.toString())}>
               Thu Duc, Ho Chi Minh City |{" "}
               <FontAwesomeIcon
                 faIcon={phoneNumber.icon}
@@ -156,30 +197,23 @@ const ContractPDFFormat = () => {
               {phoneNumber.number} |{" "}
               <Link
                 src="mailto:ngminh3004@gmail.com"
-                style={tw("flex flex-row items-center justify-center mx-3")}
+                style={tw(headerTailwindStyle.socialLink.toString())}
               >
-                <FontAwesomeIcon
-                  faIcon={faEnvelope}
-                  style={{
-                    color: "#2c3e50",
-                    width: "16px",
-                    height: "16px",
-                    marginRight: "5px",
-                  }}
-                />{" "}
-                <Text style={tw("text-base text-[#2c3e50]")}>
+                <Text style={tw(headerTailwindStyle.socialText.toString())}>
                   ngminh3004@gmail.com
                 </Text>
               </Link>
             </Text>
 
             {/* Contact Information */}
-            <View style={tw("flex flex-row justify-center items-center gap-5")}>
+            <View
+              style={tw(headerTailwindStyle.socialLink.toString() + " gap-5")}
+            >
               {socials.map((social, index) => (
                 <Link
                   src={social.link}
                   key={index}
-                  style={tw("flex flex-row items-center justify-center")}
+                  style={tw(headerTailwindStyle.socialLink.toString())}
                 >
                   <FontAwesomeIcon
                     faIcon={social.icon}
@@ -190,7 +224,7 @@ const ContractPDFFormat = () => {
                       marginRight: "5px",
                     }}
                   />
-                  <Text style={tw("text-base text-[#2c3e50]")}>
+                  <Text style={tw(headerTailwindStyle.socialText.toString())}>
                     {social.name}
                   </Text>
                 </Link>
@@ -201,136 +235,150 @@ const ContractPDFFormat = () => {
 
         {/* Experience Section */}
         <View style={styles.section}>
-          <Text
-            style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
-            )}
-          >
+          <Text style={tw(projectTailwindStyle.sectionTitle.toString())}>
             Work Experience
           </Text>
-
-          {workExperiences.map((experience, index) => (
-            <View
-              key={index}
-              style={tw("mb-4 w-full flex flex-col items-start")}
-            >
-              {/* Project Name and Period */}
+          <View style={tw(projectTailwindStyle.sectionBody.toString())}>
+            {workExperiences.map((experience, index) => (
               <View
-                style={tw("flex flex-row w-full items-center justify-between")}
+                key={index}
+                style={tw(projectTailwindStyle.item.toString())}
               >
-                <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
-                  &#8226; {experience.projectName}
-                </Text>
-                <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
-                  {experience.period}
-                </Text>
-              </View>
-
-              {/* Role */}
-              <Text style={tw("text-[#34495e] font-semibold")}>
-                {experience.role}
-              </Text>
-
-              {/* Achievements (if any) */}
-              {experience.description && experience.description.length > 0 && (
-                <View style={tw("pl-2")}>
-                  {experience.description.map((description, idx) => (
-                    <Text key={idx} style={tw("text-[#2c3e50] text-base")}>
-                      &#9675; {description}
-                    </Text>
-                  ))}
+                {/* Experience Name and Period */}
+                <View style={tw(projectTailwindStyle.itemHeader.toString())}>
+                  <Text style={tw(projectTailwindStyle.projectName.toString())}>
+                    &#8226; {experience.projectName}
+                  </Text>
+                  <Text style={tw(projectTailwindStyle.period.toString())}>
+                    {experience.period}
+                  </Text>
                 </View>
-              )}
-            </View>
-          ))}
+
+                {/* Role */}
+                <Text style={tw(projectTailwindStyle.role.toString())}>
+                  {experience.role}
+                </Text>
+
+                {/* Description */}
+                {experience.description &&
+                  experience.description.length > 0 && (
+                    <View style={tw("pl-3")}>
+                      {experience.description.map((description, idx) => (
+                        <Text
+                          key={idx}
+                          style={tw(
+                            projectTailwindStyle.description.toString()
+                          )}
+                        >
+                          &#9675; {description}
+                        </Text>
+                      ))}
+                    </View>
+                  )}
+              </View>
+            ))}
+          </View>
         </View>
 
         {/* Projects Section */}
         <View style={styles.section}>
-          <Text
-            style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
-            )}
-          >
+          <Text style={tw(projectTailwindStyle.sectionTitle.toString())}>
             Projects
           </Text>
-
-          {projects.map((experience, index) => (
-            <View
-              key={index}
-              style={tw("mb-4 w-full flex flex-col items-start")}
-            >
-              {/* Project Name and Period */}
+          <View style={tw(projectTailwindStyle.sectionBody.toString())}>
+            {projects.map((experience, index) => (
               <View
-                style={tw("flex flex-row w-full items-center justify-between")}
+                key={index}
+                style={tw(projectTailwindStyle.item.toString())}
               >
-                <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
-                  &#8226; {experience.projectName}
-                </Text>
-                <Text style={tw("text-[#7f8c8d] font-semibold text-lg")}>
-                  {experience.period}
-                </Text>
-              </View>
-
-              {/* Role */}
-              <Text style={tw("text-[#34495e] font-semibold")}>
-                {experience.role}
-              </Text>
-
-              {/* Description */}
-              {experience.description && experience.description.length > 0 && (
-                <View style={tw("pl-2")}>
-                  {experience.description.map((description, idx) => (
-                    <Text key={idx} style={tw("text-[#2c3e50] text-base")}>
-                      &#9675; {description}
-                    </Text>
-                  ))}
+                {/* Project Name and Period */}
+                <View style={tw(projectTailwindStyle.itemHeader.toString())}>
+                  <Text style={tw(projectTailwindStyle.projectName.toString())}>
+                    &#8226; {experience.projectName}
+                  </Text>
+                  <Text style={tw(projectTailwindStyle.period.toString())}>
+                    {experience.period}
+                  </Text>
                 </View>
-              )}
-            </View>
-          ))}
+
+                {/* Role */}
+                <Text style={tw(projectTailwindStyle.role.toString())}>
+                  {experience.role}
+                </Text>
+
+                {/* Description */}
+                {experience.description &&
+                  experience.description.length > 0 && (
+                    <View style={tw("pl-3")}>
+                      {experience.description.map((description, idx) => (
+                        <Text
+                          key={idx}
+                          style={tw(
+                            projectTailwindStyle.description.toString()
+                          )}
+                        >
+                          &#9675; {description}
+                        </Text>
+                      ))}
+                    </View>
+                  )}
+              </View>
+            ))}
+          </View>
         </View>
 
         {/* Education Section */}
         <View style={styles.section}>
-          <Text
-            style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
-            )}
-          >
+          <Text style={tw(educationTailwindStyle.sectionTitle.toString())}>
             Education
           </Text>
 
-          <View
-            style={tw("flex flex-row w-full justify-between items-center mb-4")}
-          >
+          <View style={tw(educationTailwindStyle.itemHeader.toString())}>
             <View style={tw("flex flex-col items-start")}>
-              <Text>&#8226; FPT University</Text>
-              <Text>&#8226; Bachelor of Software Engineering </Text>
+              <Text
+                style={tw(educationTailwindStyle.universityName.toString())}
+              >
+                &#8226; FPT University
+              </Text>
+              <Text style={tw(educationTailwindStyle.major.toString())}>
+                Bachelor of Software Engineering{" "}
+              </Text>
             </View>
-            <View style={tw("flex flex-col items-start")}>
-              <Text>Aug. 2021 – 2024 (expected)</Text>
-              <Text>Ho Chi Minh City, Vietnam</Text>
+            <View style={tw("flex flex-col items-end")}>
+              <Text style={tw(educationTailwindStyle.period.toString())}>
+                Aug. 2021 – 2024 (expected)
+              </Text>
+              <Text style={tw(educationTailwindStyle.location.toString())}>
+                Ho Chi Minh City, Vietnam
+              </Text>
             </View>
           </View>
+
+          <Text style={tw(educationTailwindStyle.course.toString())}>
+            &#9675;{" "}
+            <Text style={tw("font-semibold")}>Relevant coursework:</Text> Object
+            Oriented Programming, Data Structures and Algorithms, Database
+            Design, Software Development Project, Software Requirement, Software
+            Testing, Software Architecture and Design, Project Management, Web
+            Development, Mobile Development.
+          </Text>
         </View>
 
         {/* Skills Section */}
         <View style={styles.section}>
-          <Text
-            style={tw(
-              "text-xl font-semibold text-[#2c3e50] w-full leading-5 border-b-2 border-[#cccccc]"
-            )}
-          >
+          <Text style={tw(skillsTailwindStyle.sectionTitle.toString())}>
             Skills
           </Text>
           {/* Programming Languages */}
           <View style={styles.skillsWrapper}>
-            <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              &#8226; Programming Languages
+            <Text style={tw(skillsTailwindStyle.skillName.toString())}>
+              &#8226; Programming Languages:
             </Text>
             {skills.programmingLanguages.map((language, index) => (
-              <Text key={index} style={tw("mr-3 text-base")}>
+              <Text
+                key={index}
+                style={tw(skillsTailwindStyle.technology.toString())}
+              >
                 {language}
               </Text>
             ))}
@@ -338,11 +386,14 @@ const ContractPDFFormat = () => {
 
           {/* Libraries / Frameworks */}
           <View style={styles.skillsWrapper}>
-            <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              &#8226; Libraries / Frameworks
+            <Text style={tw(skillsTailwindStyle.skillName.toString())}>
+              &#8226; Libraries / Frameworks:
             </Text>
             {skills.libraries.map((library, index) => (
-              <Text key={index} style={tw("mr-3")}>
+              <Text
+                key={index}
+                style={tw(skillsTailwindStyle.technology.toString())}
+              >
                 {library}
               </Text>
             ))}
@@ -350,32 +401,33 @@ const ContractPDFFormat = () => {
 
           {/* Databases */}
           <View style={styles.skillsWrapper}>
-            <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              &#8226; Databases
+            <Text style={tw(skillsTailwindStyle.skillName.toString())}>
+              &#8226; Databases:
             </Text>
             {skills.databases.map((database, index) => (
-              <Text key={index} style={tw("mr-3")}>
+              <Text
+                key={index}
+                style={tw(skillsTailwindStyle.technology.toString())}
+              >
                 {database}
               </Text>
             ))}
           </View>
 
-          {/* Other Technologies */}
+          {/* Other skill */}
           <View style={styles.skillsWrapper}>
-            <Text style={tw("font-semibold text-[#34495e] mr-3")}>
-              &#8226; Other Technologies
+            <Text style={tw(skillsTailwindStyle.skillName.toString())}>
+              &#8226; Other skills:
             </Text>
-            {skills.otherTechnologies.map((tech, index) => (
-              <Text key={index} style={tw("mr-3")}>
+            {skills.othersk.map((tech, index) => (
+              <Text
+                key={index}
+                style={tw(skillsTailwindStyle.technology.toString())}
+              >
                 {tech}
               </Text>
             ))}
           </View>
-        </View>
-
-        {/* Footer Section */}
-        <View style={tw("flex flex-row items-center justify-center")}>
-          <Text>© 2024 Hoang Minh | All Rights Reserved</Text>
         </View>
       </Page>
     </Document>
