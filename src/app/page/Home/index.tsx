@@ -10,6 +10,7 @@ import {
   TabsTrigger,
   TabsContent,
 } from "../../component/ui/tab";
+import LeetCodeIcon from "../../component/Icon/LeetCode";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -54,6 +55,11 @@ const HomePage: React.FC = () => {
       link: "mailto:ngminh3004@gmail.com",
       icon: <Mail />, // Placeholder for Gmail icon
     },
+    {
+      name: "Leetcode",
+      link: "https://leetcode.com/u/hmng3004/",
+      icon: <LeetCodeIcon />, // Placeholder for LeetCode icon
+    },
   ];
 
   const handleNavigate = (slug: string) => {
@@ -82,7 +88,6 @@ const HomePage: React.FC = () => {
             >
               <span className="sr-only">{social.name}</span>
               {social.icon}
-              {/* Placeholder for actual icons */}
             </a>
           ))}
         </div>
