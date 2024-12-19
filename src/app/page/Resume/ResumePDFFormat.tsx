@@ -346,7 +346,7 @@ const ContractPDFFormat = () => {
             </View>
             <View style={tw("flex flex-col items-end")}>
               <Text style={tw(educationTailwindStyle.period.toString())}>
-                Aug. 2021 – 2024 (expected)
+                Aug. 2021 – Dec. 2024 (expected)
               </Text>
               <Text style={tw(educationTailwindStyle.location.toString())}>
                 Ho Chi Minh City, Vietnam
