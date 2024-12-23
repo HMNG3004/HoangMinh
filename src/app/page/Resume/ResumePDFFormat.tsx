@@ -181,7 +181,7 @@ const ContractPDFFormat = () => {
               Nguyen Van Hoang Minh
             </Text>
             <Text style={tw(headerTailwindStyle.jobTitle.toString())}>
-              .NET Developer
+              C# Developer
             </Text>
             <Text style={tw(headerTailwindStyle.contactInfo.toString())}>
               Thu Duc, Ho Chi Minh City |{" "}
