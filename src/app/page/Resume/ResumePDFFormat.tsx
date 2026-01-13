@@ -10,7 +10,7 @@ import {
 import { createTw } from "react-pdf-tailwind";
 import FontAwesomeIcon from "../../component/FontAwsomeIcon";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 // Register Fonts
 Font.register({
@@ -98,6 +98,10 @@ const skillsTailwindStyle = {
   technology: "mr-1 text-[#2c3e50] text-base",
 };
 
+const skillSectionsTailwindStyle = {
+  sectionWrapper: "w-full grid grid-cols-2 gap-4",
+};
+
 const socials = [
   {
     name: "HMNG3004",
@@ -109,11 +113,11 @@ const socials = [
     link: "https://www.linkedin.com/in/hmng3004/",
     icon: faLinkedin, // Placeholder for LinkedIn icon
   },
-  {
-    name: "hoangminhng.social",
-    link: "https://www.hoangminhng.social/",
-    icon: faHome, // Placeholder for Facebook icon
-  },
+  // {
+  //   name: "hoangminhng.social",
+  //   link: "https://www.hoangminhng.social/",
+  //   icon: faHome, // Placeholder for Facebook icon
+  // },
 ];
 
 const phoneNumber = {
@@ -132,13 +136,24 @@ const workExperiences = [
       "Developed the front-end of internal applications using Angular, improving user interfaces and enhancing user experience.",
     ],
   },
+  {
+    projectName: "Naviworld Vietnam",
+    role: "Technical Consultant",
+    period: "03/2025 - now",
+    description: [
+      "Worked as a Technical Consultant delivering enterprise solutions based on Microsoft Dynamics 365 Financial & Operation and Power Platform.",
+      "Designed and implemented custom business logic using C# (.NET), including extensions, APIs, and integrations with third-party systems.",
+      "Built internal and client-facing applications using Power Apps, Power Pages, and JavaScript, improving operational efficiency and user experience.",
+      // "Collaborated closely with functional consultants and clients to translate business requirements into scalable technical solutions.",
+    ],
+  },
 ];
 
 const projects = [
   {
     projectName: "Mechanical Machinery Rental Management System",
     role: "Software Developer (Front-End) - ReactJs, React Native",
-    period: "09/2024 - Present",
+    period: "09/2024 - 12/2024",
     description: [
       "Capstone project for the Bachelor's degree in Software Engineering.",
       "Engineer a robust system for managing mechanical equipment rentals, leading to a 15% increase in customer satisfaction scores as a result of improved communication and streamlined booking processes.",
@@ -150,14 +165,6 @@ const projects = [
     period: "05/2024 - 08/2024",
     description: [
       "Developed an innovative platform that streamlined the process of locating and managing student rental accommodations, resulting in a 30% reduction in time spent on property searches for over 1,000 students.",
-    ],
-  },
-  {
-    projectName: "Real Estate Auction Platform",
-    role: "Software Developer (Full-Stack) - ReactJs, ASP.NET Core",
-    period: "01/2024 - 04/2024",
-    description: [
-      "Developed a system to support the property auction experience, designed to manage up to 100 property listings and facilitate participation for a classroom-sized audience, simplifying the entire process for users.",
     ],
   },
 ];
@@ -174,17 +181,17 @@ const ContractPDFFormat = () => {
     <Document>
       <Page size="A4" style={styles.page}>
         {/* Header Section */}
-        <View style={tw("flex flex-row justify-between mb-4")}>
+        <View style={tw("flex flex-row justify-between mb-2")}>
           <View style={tw("flex flex-col items-start")}>
             {/* Name */}
             <Text style={tw(headerTailwindStyle.name.toString())}>
               Nguyen Van Hoang Minh
             </Text>
             <Text style={tw(headerTailwindStyle.jobTitle.toString())}>
-              C# Developer
+              Fullstack Developer
             </Text>
             <Text style={tw(headerTailwindStyle.contactInfo.toString())}>
-              Thu Duc, Ho Chi Minh City |{" "}
+              Ho Chi Minh City, Viet Nam |{" "}
               <FontAwesomeIcon
                 faIcon={phoneNumber.icon}
                 style={{
@@ -346,7 +353,7 @@ const ContractPDFFormat = () => {
             </View>
             <View style={tw("flex flex-col items-end")}>
               <Text style={tw(educationTailwindStyle.period.toString())}>
-                Aug. 2021 – Dec. 2024 (expected)
+                Aug. 2021 – Mar. 2025
               </Text>
               <Text style={tw(educationTailwindStyle.location.toString())}>
                 Ho Chi Minh City, Vietnam
@@ -358,9 +365,8 @@ const ContractPDFFormat = () => {
             &#9675;{" "}
             <Text style={tw("font-semibold")}>Relevant coursework:</Text> Object
             Oriented Programming, Data Structures and Algorithms, Database
-            Design, Software Development Project, Software Requirement, Software
-            Testing, Software Architecture and Design, Project Management, Web
-            Development, Mobile Development.
+            Design, Software Development Project, Software Architecture and Design, Project Management, Web
+            Development.
           </Text>
         </View>
 
@@ -369,6 +375,9 @@ const ContractPDFFormat = () => {
           <Text style={tw(skillsTailwindStyle.sectionTitle.toString())}>
             Skills
           </Text>
+          <View style={tw(skillSectionsTailwindStyle.sectionWrapper.toString())}>
+
+          </View>
           {/* Programming Languages */}
           <View style={styles.skillsWrapper}>
             <Text style={tw(skillsTailwindStyle.skillName.toString())}>
